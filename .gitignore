@@ -1,0 +1,26 @@
+# libraries
+*.a
+*.lib
+*.dylib
+*.dll
+*.framework
+
+# executables
+*.exe
+
+# OS X
+.DS_Store
+
+# Xcode
+xcuserdata/
+xcshareddata/
+
+# Visual Studio
+*.suo
+*.sdf
+*.opensdf
+*.user
+*.aps
+*.pdb
+debug/
+release/
