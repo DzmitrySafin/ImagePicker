@@ -10,7 +10,11 @@ import UIKit
 
 private let reuseIdentifier = "PhotoCell"
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    var singlePicker = UIImagePickerController()
+
+    var selectedPhotos: [UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,8 @@ class CollectionViewController: UICollectionViewController {
         // self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        singlePicker.allowsEditing = false
+        singlePicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,9 +38,30 @@ class CollectionViewController: UICollectionViewController {
     // MARK: Buttons - UIImagePickerController
 
     @IBAction func btnSingleCameraClick(sender: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            singlePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            singlePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureMode.Photo
+            singlePicker.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+            self.presentViewController(singlePicker, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Image Picker", message: "Camera is not available!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 
     @IBAction func btnSingleLibraryClick(sender: UIBarButtonItem) {
+        singlePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone {
+            self.presentViewController(singlePicker, animated: true, completion: nil)
+        } else {
+            singlePicker.modalPresentationStyle = UIModalPresentationStyle.Popover
+            singlePicker.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.Any
+            singlePicker.popoverPresentationController!.sourceView = self.view
+            singlePicker.popoverPresentationController!.sourceRect = CGRectZero
+            singlePicker.popoverPresentationController!.barButtonItem = sender
+            self.presentViewController(singlePicker, animated: true, completion: nil)
+        }
     }
 
     // MARK: Buttons - JCImagePickerController
@@ -58,21 +85,19 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return selectedPhotos.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
+
         // Configure the cell
-    
+        cell.imageView.image = selectedPhotos[indexPath.row]
+
         return cell
     }
 
@@ -107,4 +132,12 @@ class CollectionViewController: UICollectionViewController {
     }
     */
 
+    // MARK: UIImagePickerControllerDelegate
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        selectedPhotos.append(info[UIImagePickerControllerOriginalImage] as! UIImage)
+
+        self.collectionView!.reloadData()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
