@@ -13,6 +13,7 @@
 		012F5D3C1C5C004900B149FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012F5D3A1C5C004900B149FA /* Main.storyboard */; };
 		012F5D3E1C5C004900B149FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012F5D3D1C5C004900B149FA /* Assets.xcassets */; };
 		012F5D411C5C004900B149FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012F5D3F1C5C004900B149FA /* LaunchScreen.storyboard */; };
+		01B438E61C6000AB00831634 /* JCAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438E51C6000AB00831634 /* JCAsset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		012F5D3D1C5C004900B149FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012F5D401C5C004900B149FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		012F5D421C5C004900B149FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01B438E51C6000AB00831634 /* JCAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCAsset.swift; path = JCImagePicker/JCAsset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +65,17 @@
 				012F5D3D1C5C004900B149FA /* Assets.xcassets */,
 				012F5D3F1C5C004900B149FA /* LaunchScreen.storyboard */,
 				012F5D421C5C004900B149FA /* Info.plist */,
+				01B438E41C60001600831634 /* JCImagePicker */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		01B438E41C60001600831634 /* JCImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				01B438E51C6000AB00831634 /* JCAsset.swift */,
+			);
+			name = JCImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0120EE761C5D1D3D003FE9BE /* CollectionViewController.swift in Sources */,
+				01B438E61C6000AB00831634 /* JCAsset.swift in Sources */,
 				012F5D371C5C004900B149FA /* AppDelegate.swift in Sources */,
 				0120EE781C5D1E99003FE9BE /* CollectionViewCell.swift in Sources */,
 			);

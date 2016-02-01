@@ -14,7 +14,7 @@ class CollectionViewController: UICollectionViewController, UINavigationControll
 
     var singlePicker = UIImagePickerController()
 
-    var selectedPhotos: [UIImage] = []
+    var selectedPhotos: [JCAsset] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +96,7 @@ class CollectionViewController: UICollectionViewController, UINavigationControll
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
 
         // Configure the cell
-        cell.imageView.image = selectedPhotos[indexPath.row]
+        cell.imageView.image = selectedPhotos[indexPath.row].image
 
         return cell
     }
@@ -135,7 +135,9 @@ class CollectionViewController: UICollectionViewController, UINavigationControll
     // MARK: UIImagePickerControllerDelegate
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        selectedPhotos.append(info[UIImagePickerControllerOriginalImage] as! UIImage)
+        let asset = JCAsset()
+        asset.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        selectedPhotos.append(asset)
 
         self.collectionView!.reloadData()
         self.dismissViewControllerAnimated(true, completion: nil)
