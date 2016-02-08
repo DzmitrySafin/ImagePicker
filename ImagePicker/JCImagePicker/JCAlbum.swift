@@ -1,5 +1,5 @@
 //
-//  JCAsset.swift
+//  JCAlbum.swift
 //  ImagePicker
 //
 //  Created by Dzmitry Safin on 2/2/16.
@@ -9,8 +9,10 @@
 import UIKit
 import Photos
 
-class JCAsset: NSObject {
+class JCAlbum: NSObject {
 
-    var image: UIImage!
-    var asset: PHAsset!
+    var title: String!
+    var number: Int!
+    var thumbnail: UIImage!
+    var collection: PHAssetCollection!
 }

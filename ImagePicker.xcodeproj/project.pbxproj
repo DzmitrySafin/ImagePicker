@@ -14,6 +14,18 @@
 		012F5D3E1C5C004900B149FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012F5D3D1C5C004900B149FA /* Assets.xcassets */; };
 		012F5D411C5C004900B149FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012F5D3F1C5C004900B149FA /* LaunchScreen.storyboard */; };
 		01B438E61C6000AB00831634 /* JCAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438E51C6000AB00831634 /* JCAsset.swift */; };
+		01B438E81C6002BF00831634 /* JCImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438E71C6002BF00831634 /* JCImagePickerController.swift */; };
+		01B438EA1C60039200831634 /* JCImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438E91C60039200831634 /* JCImagePickerControllerDelegate.swift */; };
+		01B438EC1C6003EE00831634 /* JCAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438EB1C6003EE00831634 /* JCAlbumViewController.swift */; };
+		01B438EE1C6005E700831634 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B438ED1C6005E700831634 /* Photos.framework */; };
+		01B438F11C60066C00831634 /* JCAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438F01C60066C00831634 /* JCAlbumCell.swift */; };
+		01B438F31C6006E000831634 /* JCAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438F21C6006E000831634 /* JCAlbum.swift */; };
+		01B438F51C60075000831634 /* JCAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438F41C60075000831634 /* JCAssetViewController.swift */; };
+		01B438F71C60095700831634 /* JCAssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B438F61C60095700831634 /* JCAssetCell.swift */; };
+		01B438FB1C600B8500831634 /* JCSelectOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B438F81C600B8500831634 /* JCSelectOverlay.png */; };
+		01B438FC1C600B8500831634 /* JCSelectOverlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B438F91C600B8500831634 /* JCSelectOverlay@2x.png */; };
+		01B438FD1C600B8500831634 /* JCSelectOverlay@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B438FA1C600B8500831634 /* JCSelectOverlay@3x.png */; };
+		01D798281C67E61C00C5F244 /* JCCameraOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D798271C67E61C00C5F244 /* JCCameraOverlay.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +38,18 @@
 		012F5D401C5C004900B149FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		012F5D421C5C004900B149FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01B438E51C6000AB00831634 /* JCAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCAsset.swift; path = JCImagePicker/JCAsset.swift; sourceTree = "<group>"; };
+		01B438E71C6002BF00831634 /* JCImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCImagePickerController.swift; path = JCImagePicker/JCImagePickerController.swift; sourceTree = "<group>"; };
+		01B438E91C60039200831634 /* JCImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCImagePickerControllerDelegate.swift; path = JCImagePicker/JCImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
+		01B438EB1C6003EE00831634 /* JCAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCAlbumViewController.swift; path = JCImagePicker/JCAlbumViewController.swift; sourceTree = "<group>"; };
+		01B438ED1C6005E700831634 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		01B438F01C60066C00831634 /* JCAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCAlbumCell.swift; path = JCImagePicker/JCAlbumCell.swift; sourceTree = "<group>"; };
+		01B438F21C6006E000831634 /* JCAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCAlbum.swift; path = JCImagePicker/JCAlbum.swift; sourceTree = "<group>"; };
+		01B438F41C60075000831634 /* JCAssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCAssetViewController.swift; path = JCImagePicker/JCAssetViewController.swift; sourceTree = "<group>"; };
+		01B438F61C60095700831634 /* JCAssetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JCAssetCell.swift; path = JCImagePicker/JCAssetCell.swift; sourceTree = "<group>"; };
+		01B438F81C600B8500831634 /* JCSelectOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = JCSelectOverlay.png; path = JCImagePicker/JCSelectOverlay.png; sourceTree = "<group>"; };
+		01B438F91C600B8500831634 /* JCSelectOverlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "JCSelectOverlay@2x.png"; path = "JCImagePicker/JCSelectOverlay@2x.png"; sourceTree = "<group>"; };
+		01B438FA1C600B8500831634 /* JCSelectOverlay@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "JCSelectOverlay@3x.png"; path = "JCImagePicker/JCSelectOverlay@3x.png"; sourceTree = "<group>"; };
+		01D798271C67E61C00C5F244 /* JCCameraOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCameraOverlay.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B438EE1C6005E700831634 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +91,7 @@
 				012F5D3F1C5C004900B149FA /* LaunchScreen.storyboard */,
 				012F5D421C5C004900B149FA /* Info.plist */,
 				01B438E41C60001600831634 /* JCImagePicker */,
+				01B438EF1C6005F600831634 /* References */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -73,9 +99,29 @@
 		01B438E41C60001600831634 /* JCImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				01B438F81C600B8500831634 /* JCSelectOverlay.png */,
+				01B438F91C600B8500831634 /* JCSelectOverlay@2x.png */,
+				01B438FA1C600B8500831634 /* JCSelectOverlay@3x.png */,
+				01D798271C67E61C00C5F244 /* JCCameraOverlay.xib */,
+				01B438E71C6002BF00831634 /* JCImagePickerController.swift */,
+				01B438E91C60039200831634 /* JCImagePickerControllerDelegate.swift */,
+				01B438EB1C6003EE00831634 /* JCAlbumViewController.swift */,
+				01B438F01C60066C00831634 /* JCAlbumCell.swift */,
+				01B438F21C6006E000831634 /* JCAlbum.swift */,
+				01B438F41C60075000831634 /* JCAssetViewController.swift */,
+				01B438F61C60095700831634 /* JCAssetCell.swift */,
 				01B438E51C6000AB00831634 /* JCAsset.swift */,
 			);
 			name = JCImagePicker;
+			sourceTree = "<group>";
+		};
+		01B438EF1C6005F600831634 /* References */ = {
+			isa = PBXGroup;
+			children = (
+				01B438ED1C6005E700831634 /* Photos.framework */,
+			);
+			name = References;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +183,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B438FC1C600B8500831634 /* JCSelectOverlay@2x.png in Resources */,
 				012F5D411C5C004900B149FA /* LaunchScreen.storyboard in Resources */,
+				01B438FB1C600B8500831634 /* JCSelectOverlay.png in Resources */,
+				01D798281C67E61C00C5F244 /* JCCameraOverlay.xib in Resources */,
+				01B438FD1C600B8500831634 /* JCSelectOverlay@3x.png in Resources */,
 				012F5D3E1C5C004900B149FA /* Assets.xcassets in Resources */,
 				012F5D3C1C5C004900B149FA /* Main.storyboard in Resources */,
 			);
@@ -152,8 +202,15 @@
 			files = (
 				0120EE761C5D1D3D003FE9BE /* CollectionViewController.swift in Sources */,
 				01B438E61C6000AB00831634 /* JCAsset.swift in Sources */,
+				01B438F31C6006E000831634 /* JCAlbum.swift in Sources */,
+				01B438F11C60066C00831634 /* JCAlbumCell.swift in Sources */,
 				012F5D371C5C004900B149FA /* AppDelegate.swift in Sources */,
+				01B438EA1C60039200831634 /* JCImagePickerControllerDelegate.swift in Sources */,
+				01B438E81C6002BF00831634 /* JCImagePickerController.swift in Sources */,
+				01B438F71C60095700831634 /* JCAssetCell.swift in Sources */,
 				0120EE781C5D1E99003FE9BE /* CollectionViewCell.swift in Sources */,
+				01B438F51C60075000831634 /* JCAssetViewController.swift in Sources */,
+				01B438EC1C6003EE00831634 /* JCAlbumViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

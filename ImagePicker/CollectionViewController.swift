@@ -10,9 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "PhotoCell"
 
-class CollectionViewController: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class CollectionViewController: UICollectionViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, JCImagePickerControllerDelegate {
 
     var singlePicker = UIImagePickerController()
+    var multiPicker = JCImagePickerController()
 
     var selectedPhotos: [JCAsset] = []
 
@@ -28,6 +29,7 @@ class CollectionViewController: UICollectionViewController, UINavigationControll
         // Do any additional setup after loading the view.
         singlePicker.allowsEditing = false
         singlePicker.delegate = self
+        multiPicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,9 +69,28 @@ class CollectionViewController: UICollectionViewController, UINavigationControll
     // MARK: Buttons - JCImagePickerController
 
     @IBAction func btnMultiCameraClick(sender: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            //multiPicker.sourceType = UIImagePickerControllerSourceType.Camera
+            self.presentViewController(multiPicker, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Image Picker", message: "Camera is not available!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 
     @IBAction func btnMultiLibraryClick(sender: UIBarButtonItem) {
+        //multiPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone {
+            self.presentViewController(multiPicker, animated: true, completion: nil)
+        } else {
+            multiPicker.modalPresentationStyle = UIModalPresentationStyle.Popover
+            multiPicker.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.Any
+            multiPicker.popoverPresentationController!.sourceView = self.view
+            multiPicker.popoverPresentationController!.sourceRect = CGRectZero
+            multiPicker.popoverPresentationController!.barButtonItem = sender
+            self.presentViewController(multiPicker, animated: true, completion: nil)
+        }
     }
 
     /*
@@ -140,6 +161,21 @@ class CollectionViewController: UICollectionViewController, UINavigationControll
         selectedPhotos.append(asset)
 
         self.collectionView!.reloadData()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    // MARK: JCImagePickerControllerDelegate
+
+    func multiPickerController(picker: JCImagePickerController, didFinishPickingAssets assets: [JCAsset]) {
+        for asset in assets {
+            selectedPhotos.append(asset)
+        }
+
+        self.collectionView!.reloadData()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func multiPickerControllerDidCancel(picker: JCImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
